@@ -1,0 +1,24 @@
+body{
+  font-family:sans-serif;
+  font-weight:100;
+}
+button{
+  padding:10px 20px;
+  color:white;
+}
+.row{
+  margin:10px;
+}
+.light{
+  padding:20px;
+  color:white;
+  text-align:center;
+}
+.off{
+  background-color: #4d3690;
+  color:#dcf;
+}
+.on{
+  background-color: #AA4439;
+  color:#FFB2AA;
+}
