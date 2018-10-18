@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 
 import Operator from './components/Operator.js';
+import Buttons from './components/InitialSwitch.js';
+
 import './App.css';
 
 class App extends Component {
 
    initialswitch() {
+
      return (
-       <div>
-        <button className="switch switch-1 off" data-state="off"><span>OFF</span></button>
-                    <Operator />
-              <button className="switch switch-2 off" data-state="off"><span>OFF</span></button>
+       <div className='container'>
+          <Buttons
+              className={"switch switch-1 off"}
+              datastate={"off"}
+          />
+          <Operator />
+          <Buttons
+              className={"switch switch-2 off"}
+              datastate={"off"}
+          />
          </div>
      )
    }
