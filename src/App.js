@@ -128,3 +128,22 @@ export default App;
 // }
 //
 // $(init_jquery);
+
+
+// Plans
+// console.log((true^false)&(true^false)&(true^false));
+//
+//
+//
+// const x = ['true', '^', 'false', '&','true', '^', 'false','&','true', '^', 'false', '&','true', '^', 'false'];
+//
+// console.log(eval(x.join('')));
+// line (add a line)
+// operator
+// line (remove a line)
+//  operator
+// line (remove a line)
+
+// push operator, a button, operator and button.
+// use ternary operatorrs for true and false.
+// use case for operators
