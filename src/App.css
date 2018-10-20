@@ -3,16 +3,37 @@ body{
   font-weight:100;
 }
 button{
-  padding:10px 20px;
+  padding: 1.5% 2%;
+  margin-left: .6%;
   color:white;
+  font-size: large;
+  font-weight:  bold;
+}
+.block{
+  padding: 1.5% 2%;
+  margin-left: .6%;
+  color:white;
+  font-size: large;
+  font-weight:  bold;
+  height: 2%;
+  border-color: black;
+}
+select{
+  padding:2% 2.5%;
+  margin-left: .6%;
+  height: 30px;
 }
 .row{
-  margin:10px;
+  margin: .4%;
 }
 .light{
-  padding:20px;
+  padding: 1.7%;
   color:white;
-  text-align:center;
+  text-align: center;
+  text: bold;
+  font-weight: bold;
+  font-size: large;
+  margin-top: 1.7%
 }
 .false{
   background-color: #4d3690;
@@ -23,16 +44,30 @@ button{
   color:#FFB2AA;
 }
 .add{
-  background-color: green;
-  color: white;
-  border-radius: 20%;
+  background-color: #81b108;
 }
 .remove{
-  background-color: red;
-  color: white;
+  background-color: #ff7b92;
+}
+.radius{
   border-radius: 20%;
 }
-
+.add, .remove{
+  color: black;
+  border-radius: 50%;
+}
 div.off, div.on{
   display: flex;
+}
+.imageClass{
+  color: green;
+  border-radius: 20%;
+  background-color: #81b108;
+}
+img.imageClass {
+  display: flex;
+  float: right;
+  width: 4%;
+  height: 4%;
+  margin-left: .6%;
 }
