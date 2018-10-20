@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Operator = (prop) => {
+const Operator = (props) => {
   return(
-    <select id="mode">
-        <option value="and">and</option>
-        <option value="or">or</option>
-        <option value="xor">xor</option>
+    <select id="mode" value={props.value} onChange={props.onChange}>
+        <option value="&">and</option>
+        <option value="|">or</option>
+        <option value="^">xor</option>
     </select>
   );
 }

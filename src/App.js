@@ -2,62 +2,95 @@ import React, { Component } from 'react';
 
 import Operator from './components/Operator.js';
 import Buttons from './components/InitialSwitch.js';
-
 import './App.css';
 
 class App extends Component {
+  state = {
+    test: [ {b1: false, op2: "|", b2: true }]
+  };
 
-   initialswitch() {
-
-     return (
-       <div className='container'>
-          <Buttons
-              className={"switch switch-1 off"}
-              datastate={"off"}
-          />
-          <Operator />
-          <Buttons
-              className={"switch switch-2 off"}
-              datastate={"off"}
-          />
-         </div>
-     )
-   }
-
-    additionalSwitch(){
-      return (
-        <div>
-          <div class="row">
-            <Operator />
-          </div>
-          {this.initialswitch()}
-        </div>
-      );
-    }
-
-
-    switchCountRender() {
-          return (
-              <div className="row">
-                {this.initialswitch()}
-              </div>
-          );
-        }
-
-
-
-  	render() {
-      return (
-        <div>
-          {this.switchCountRender()}
-            <div className="row">
-              <div className="light off"><span>OFF</span></div>
-            </div>
-          </div>
-      );
-
-    }
+  addRow = () => {
+    let piece = this.state.test;
+    piece.push({op1: "^", b1: false, op2: "|", b2: true })
+    this.setState ({ test: piece }
+    ,
+      () => { console.log(this.state.test); }
+    );
   }
+
+  removeRow = () => {
+    let copy = this.state.test;
+    if( copy.length > 1) {
+      copy.pop();
+    }
+    this.setState ({ test: copy }
+      ,
+        () => { console.log(this.state.test); }
+    );
+  }
+
+  operatorChange = (event) => {
+    console.log(event);
+    this.setState({ value: event.target.value})
+  }
+
+  changeB1 (event, index){
+    let x;
+    if(event === true) { x = false; } else { x = true; }
+    let copy = this.state.test;
+    copy[index].b1 = x;
+    this.setState({ test: copy})
+  }
+
+  changeB2 (event, index){
+    let x;
+    if(event === true) { x = false; } else { x = true; }
+    let copy = this.state.test;
+    copy[index].b2 = x;
+    this.setState({ test: copy})
+  }
+
+  renderHelperFunction() {
+    return this.state.test.map((item, index) => {
+      if( index ===  0 ){
+       return (
+         <span key={index}>
+                 <div>
+                       <Buttons className={item.b1 ? 'true' : 'false'} indication={item.b1 ? 'On' : 'Off'} onClick={() => this.changeB1(item.b1, index)}/>
+                       <Operator value={item.op2} onChange={this.operatorChange} />
+                       <Buttons className={item.b2  ? 'true' : 'false'} indication={item.b2 ? 'On' : 'Off'} onClick={() => this.changeB2(item.b2, index)}/>
+                       <Buttons className={"add"} indication={"+"} onClick={this.addRow}/>
+                       <Buttons className={"remove"} indication={"-"} onClick={this.removeRow} />
+                 </div>
+         </span>
+       );
+     } else {
+       return (
+         <span key={index}>
+                 <div className="container row">
+                   <Operator value={item.op1} onChange={this.operatorChange}/>
+                 </div>
+
+                 <div>
+                       <Buttons className={item.b1 ? 'true' : 'false'} indication={item.b1 ? 'On' : 'Off'} onClick={() => this.changeB1(item.b1, index)}/>
+                       <Operator value={item.op2} onChange={this.operatorChange} />
+                       <Buttons className={item.b2  ? 'true' : 'false'} indication={item.b2 ? 'On' : 'Off'} onClick={() => this.changeB2(item.b2, index)}/>
+                 </div>
+         </span>
+       );
+     }
+    });
+  }
+
+	render() {
+    return (
+      <div className="container row">
+                  {this.renderHelperFunction() }
+                  <div className="light true"><span>OFF</span></div>
+        </div>
+    );
+  }
+}
 
 export default App;
 

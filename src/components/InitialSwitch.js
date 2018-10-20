@@ -4,11 +4,11 @@ import React from 'react';
 
 const Buttons = (props) => {
   return (
-    <div>
-          <button className={props.className} datastate={props.datastate}>
-            <span>OFF</span>
+    <span>
+          <button className={props.className} datastate={props.datastate} onClick={props.onClick}>
+            <span>{props.indication}</span>
           </button>
-    </div>
+    </span>
   );
 }
 
