@@ -1,6 +1,4 @@
 import React from 'react';
-// import Operator from './Operator.js';
-
 
 const Buttons = (props) => {
   return (

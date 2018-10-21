@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Body from './components/Body';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import Welcome from './screens/Welcome';
+import Explanation from './screens/Explanation'
+import BooleanMansion from './screens/BooleanMansion';
 
  export default class App extends Component<{}> {
      render() {
          return (
-           <div>
-              <Header />
-              <Body />
-           </div>
+             <BrowserRouter>
+                 <Switch>
+                   <Route
+                     exact
+                     path='/'
+                     component={Welcome}
+                   />
+                   <Route
+                     exact
+                     path='/explanation'
+                     component={Explanation}
+                   />
+                   <Route
+                     exact
+                     path='/booleanMansion'
+                     component={BooleanMansion}
+                   />
+                 </Switch>
+             </BrowserRouter>
          )
      }
 }
