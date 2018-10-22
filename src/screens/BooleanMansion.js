@@ -5,7 +5,16 @@ import Body from '../components/Body';
 class BooleanMansion extends Component {
   render() {
     return(
-      <div>
+      <div
+            style={{
+            backgroundImage: "url(https://i.imgur.com/0JfRsk6.jpg)",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'noRepeat',
+            minHeight: 1060,
+            // maxHeight: 1060,
+          }}
+        >
         <Header />
         <Body />
       </div>
@@ -14,3 +23,9 @@ class BooleanMansion extends Component {
 }
 
 export default BooleanMansion;
+
+
+// .full-background {
+//   background: url(./railroad.jpg) no-repeat center fixed;
+//   background-size: cover;
+// }

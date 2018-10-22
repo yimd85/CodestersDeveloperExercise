@@ -16,7 +16,7 @@ class BooleanMansion extends Component {
             <Column flexGrow={1} horizontal='center'>
               <img src={'https://i.imgur.com/pqHTzASm.png'} alt='test' />
             </Column>
-            <Column flexGrow={1} horizontal='left'>
+            <Column flexGrow={1} horizontal='start'>
               <h3 style={{color: 'white', fontSize: 40 }}> Greetings! And welcome to my mansion.</h3>
               <h3 style={{color: 'white', fontSize: 25 }}> We will learn about boo!-le-an operators today.</h3>
               <h3 style={{color: 'white', fontSize: 25 }}> Click on the next arrow to get started.</h3>
