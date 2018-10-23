@@ -12,8 +12,7 @@ class BooleanMansion extends Component {
             backgroundSize: 'cover',
             backgroundRepeat: 'noRepeat',
             minHeight: 1060,
-            // maxHeight: 1060,
-          }}
+            }}
         >
         <Header />
         <Body />
@@ -23,9 +22,3 @@ class BooleanMansion extends Component {
 }
 
 export default BooleanMansion;
-
-
-// .full-background {
-//   background: url(./railroad.jpg) no-repeat center fixed;
-//   background-size: cover;
-// }

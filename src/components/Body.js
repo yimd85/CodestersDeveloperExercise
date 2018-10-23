@@ -19,25 +19,25 @@ class Body extends Component {
   addRow() {
     let copy = this.state.array;
     copy.push({parenOne: '(', firstOperator: '&', bineryOne: true, secondOperator: '&', bineryTwo: false, parenTwo: ')' });
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
   }
 
   removeRow() {
     let copy = this.state.array;
     if( copy.length > 1) { copy.pop(); }
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
   }
 
   operatorChange1 (index, event) {
     let copy = this.state.array;
     copy[index].firstOperator = event.target.value;
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
   }
 
   operatorChange2 (index, event) {
     let copy = this.state.array;
     copy[index].secondOperator = event.target.value;
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
   }
 
   changebineryOne (event, index){
@@ -45,7 +45,7 @@ class Body extends Component {
     if( event === true ) { x = false; } else { x = true; }
     let copy = this.state.array;
     copy[index].bineryOne = x;
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
   }
 
   changebineryTwo (event, index){
@@ -53,12 +53,16 @@ class Body extends Component {
     if( event === true ) { x = false; } else { x = true; }
     let copy = this.state.array;
     copy[index].bineryTwo = x;
-    this.setState ({ array: copy }, () => { this.calculate(); });
+    this.setStateHelper(copy);
+  }
+
+  setStateHelper(copying){
+    this.setState({ array: copying }, () => {this.calculate(); });
   }
 
   calculate() {
     let copy = this.state.array;
-    var vals=[];
+    let vals=[];
     for(let i=0; i< copy.length; i++){
           if(i===0){
               vals.push(copy[i].parenOne, copy[i].bineryOne, copy[i].secondOperator, copy[i].bineryTwo, copy[i].parenTwo);
@@ -123,8 +127,8 @@ class Body extends Component {
 	render() {
     return (
         <div className="container row">
-                        {this.renderSwitches() }
-                  <div className={this.state.finalAnswer  ? 'light true' : 'light false'}>
+                  {this.renderSwitches() }
+                  <div className={this.state.finalAnswer  ? 'light true ' : 'light false'}>
                         <span>{this.state.finalAnswer  ? 'On' : 'Off'}</span>
                   </div>
         </div>

@@ -9,21 +9,9 @@ import BooleanMansion from './screens/BooleanMansion';
          return (
              <BrowserRouter>
                  <Switch>
-                   <Route
-                     exact
-                     path='/'
-                     component={Welcome}
-                   />
-                   <Route
-                     exact
-                     path='/explanation'
-                     component={Explanation}
-                   />
-                   <Route
-                     exact
-                     path='/booleanMansion'
-                     component={BooleanMansion}
-                   />
+                   <Route exact path='/' component={Welcome} />
+                   <Route exact path='/explanation' component={Explanation} />
+                   <Route exact path='/booleanMansion' component={BooleanMansion} />
                  </Switch>
              </BrowserRouter>
          )
