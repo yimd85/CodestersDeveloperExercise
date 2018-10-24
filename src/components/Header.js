@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { AppBar, Typography } from '@material-ui/core/';
+import '../App.css';
 
 type Props = {
   classes: Object
@@ -21,10 +22,12 @@ function Header(props: Props) {
           position='relative'
           style={{backgroundColor: 'black'}}
         >
-              <Typography variant='h2' color='inherit'>
-                <img style={{right: '30px'}} src='https://i.imgur.com/FXDc82ls.png' alt='Boo the friendly ghost' />
-                  Boo's Boolean Mansion
-                <img style={{right: '30px'}} src='https://i.imgur.com/SSVPTq6s.png' alt='Boo the friendly ghost' />
+              <Typography color='inherit'>
+                <img className='booImage' style={{right: '30px'}} src='https://i.imgur.com/FXDc82ls.png' alt='Boo the friendly ghost' />
+
+                    <span className='headerText'>Boo's Boolean Mansion</span>
+
+                <img className='booImage' style={{right: '30px'}} src='https://i.imgur.com/SSVPTq6s.png' alt='Boo the friendly ghost' />
               </Typography>
         </AppBar>
     </div>

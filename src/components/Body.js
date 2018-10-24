@@ -92,21 +92,25 @@ class Body extends Component {
        return (
          <span key={index}>
                  <div>
-                      <Buttons className={item.bineryOne ? 'true radius' : 'false radius'} indication={item.bineryOne ? 'On' : 'Off'} onClick={() => this.changebineryOne(item.bineryOne, index)}/>
-                      <Operator value={item.secondOperator} onChange={(event) => this.operatorChange2(index, event)} />
-                      <Buttons className={item.bineryTwo  ? 'true radius' : 'false radius'} indication={item.bineryTwo ? 'On' : 'Off'} onClick={() => this.changebineryTwo(item.bineryTwo, index)}/>
-                      <Buttons className={'add'} indication={"+"} onClick={() => this.addRow()}/>
-                      <Buttons className={'remove'} indication={"-"} onClick={() => this.removeRow()} />
-                      <img className={'imageClass'} src={item.bineryTwo ? trueImage : falseImage} alt='binaryBoo' />
-                      <img className={'imageClass'} src={this.imageHelper(item.secondOperator)} alt='operator' />
-                      <img className={'imageClass'} src={item.bineryOne ? trueImage : falseImage} alt='binaryBoo' />
+                        <Buttons className={item.bineryOne ? 'true radius' : 'false radius'} indication={item.bineryOne ? 'On' : 'Off'} onClick={() => this.changebineryOne(item.bineryOne, index)}/>
+                        <Operator value={item.secondOperator} onChange={(event) => this.operatorChange2(index, event)} />
+                        <Buttons className={item.bineryTwo  ? 'true radius' : 'false radius'} indication={item.bineryTwo ? 'On' : 'Off'} onClick={() => this.changebineryTwo(item.bineryTwo, index)}/>
+                        <Buttons className={'add'} indication={"+"} onClick={() => this.addRow()}/>
+                        <Buttons className={'remove'} indication={"-"} onClick={() => this.removeRow()} />
+                      <span className='booleanImage'>
+                        <img className={'imageClass'} src={item.bineryTwo ? trueImage : falseImage} alt='binaryBoo' />
+                        <img className={'imageClass'} src={this.imageHelper(item.secondOperator)} alt='operator' />
+                        <img className={'imageClass'} src={item.bineryOne ? trueImage : falseImage} alt='binaryBoo' />
+                      </span>
                  </div>
          </span>
        );
      } else {
        return (
          <span key={index}>
-           <img className={'imageClass'} src={this.imageHelper(item.firstOperator)} alt='operator' />
+               <span className='booleanImage'>
+                  <img className={'imageClass'} src={this.imageHelper(item.firstOperator)} alt='operator' />
+              </span>
                  <div className="container row block">
                         <Operator value={item.firstOperator} onChange={(event) => this.operatorChange1(index, event)}/>
                  </div>
@@ -114,9 +118,11 @@ class Body extends Component {
                        <Buttons className={item.bineryOne ? 'true radius' : 'false radius'} indication={item.bineryOne ? 'On' : 'Off'} onClick={() => this.changebineryOne(item.bineryOne, index)}/>
                        <Operator value={item.secondOperator} onChange={(event) => this.operatorChange2(index, event)} />
                        <Buttons className={item.bineryTwo  ? 'true radius' : 'false radius'} indication={item.bineryTwo ? 'On' : 'Off'} onClick={() => this.changebineryTwo(item.bineryTwo, index)}/>
-                       <img className={'imageClass'} src={item.bineryTwo ? trueImage : falseImage} alt='binaryBoo' />
-                       <img className={'imageClass'} src={this.imageHelper(item.secondOperator)} alt='operator' />
-                       <img className={'imageClass'} src={item.bineryOne ? trueImage : falseImage} alt='binaryBoo' />
+                       <span className='booleanImage'>
+                           <img className={'imageClass'} src={item.bineryTwo ? trueImage : falseImage} alt='binaryBoo' />
+                           <img className={'imageClass'} src={this.imageHelper(item.secondOperator)} alt='operator' />
+                           <img className={'imageClass'} src={item.bineryOne ? trueImage : falseImage} alt='binaryBoo' />
+                       </span>
                  </div>
          </span>
        );

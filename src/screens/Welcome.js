@@ -10,20 +10,23 @@ class BooleanMansion extends Component {
       <div className='welcome'>
         <Column flexGrow={1}>
           <Row horizontal='center'>
-            <h1 style={{color: 'hotpink', fontSize: 70, }}>Boo's Boolean Mansion</h1>
+            <span  className='welcomeText' >Boo's Boolean Mansion</span>
           </Row>
           <Row vertical='center'>
             <Column flexGrow={1} horizontal='center'>
-              <img src={'https://i.imgur.com/pqHTzASm.png'} alt='test' />
+              <img className='booImage' src={'https://i.imgur.com/pqHTzASm.png'} alt='glasses-boo' />
             </Column>
             <Column flexGrow={1} horizontal='start'>
-              <h3 style={{color: 'white', fontSize: 40 }}> Greetings! And welcome to my mansion.</h3>
-              <h3 style={{color: 'white', fontSize: 25 }}> We will learn about boo!-le-an operators today.</h3>
-              <h3 style={{color: 'white', fontSize: 25 }}> Click on the next arrow to get started.</h3>
+              <div style={{marginTop: 30 }}>
+                <div className='largeDesc'> Greetings!</div>
+                <div className='largeDesc'> And welcome to my mansion.</div>
+                <div className='largeDesc'> We will learn about boo!-le-an operators today.</div>
+                <div className='largeDesc'> Click on the next arrow to get started.</div>
+              </div>
               <Link
                 to='/explanation'
                 >
-                  <img src={'https://i.imgur.com/ErXLINXt.png'} alt='test' />
+                  <img src={'https://i.imgur.com/ErXLINXt.png'} alt='arrow' />
                 </Link>
             </Column>
           </Row>

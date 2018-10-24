@@ -3,6 +3,8 @@ body{
   font-weight:100;
   background-color: black;
 }
+
+/* CSS for the operator page */
 button{
   padding: 1.5% 2%;
   margin-left: .6%;
@@ -75,4 +77,47 @@ img.imageClass {
   width: 4%;
   height: 4%;
   margin-left: .6%;
+}
+
+/* This is CSS for the first 2 routes */
+.headerText{
+  font-size: 70px;
+}
+.welcomeText {
+  font-weight: bold;
+  color: hotpink;
+  font-size: 70px;
+}
+.largeDesc {
+  color: white;
+}
+.largeDesc {
+  font-size: 50px;
+}
+
+/* media queries */
+@media(max-width: 950px) {
+  .headerText{
+    font-size: 40px;
+  }
+  .welcomeText {
+    font-size: 50px;
+  }
+}
+@media(max-width: 600px) {
+  .welcomeText {
+    font-size: 30px;
+  }
+  .largeDesc{
+    font-size: 20px;
+  }
+  .headerText{
+    font-size: 20px;
+  }
+  .booImage{
+    display: none;
+  }
+  .booleanImage{
+    display: none;
+  }
 }

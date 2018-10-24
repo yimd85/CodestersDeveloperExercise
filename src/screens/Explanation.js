@@ -10,21 +10,25 @@ class Explanation extends Component {
       <div className='welcome'>
         <Column flexGrow={1}>
           <Row horizontal='center'>
-            <h1 style={{color: 'hotpink', fontSize: 70, }}>Boo's Boolean Mansion</h1>
+            <span  className='welcomeText' >Boo's Boolean Mansion</span>
           </Row>
           <Row vertical='center'>
             <Column flexGrow={1} horizontal='center'>
-              <h3 style={{color: 'white', fontSize: 30 }}> The Button! represents on and off. Drop downs! pick our operators</h3>
-              <h3 style={{color: 'white', fontSize: 30 }}> The Bottom Results Line! shows results. Add or Remove! lines</h3>
-              <h3 style={{color: 'white', fontSize: 30 }}> Click the arrow if you dare ~Heeheehee~ </h3>
+              <div style={{marginTop: 30 }}>
+                <div className='largeDesc'> The Button! represents on and off. </div>
+                <div className='largeDesc'> Drop downs! pick our operators</div>
+                <div className='largeDesc'> Bottom Results Line! shows results. </div>
+                <div className='largeDesc'> Add or Remove Rows!</div>
+                <div className='largeDesc'> Click the arrow if you dare ~Heeheehee~ </div>
+              </div>
               <Link
                 to="/booleanMansion"
                 >
-                  <img src={'https://i.imgur.com/ErXLINXt.png'} alt='test' />
+                  <img src={'https://i.imgur.com/ErXLINXt.png'} alt='arrow' />
                 </Link>
             </Column>
             <Column flexGrow={1} horizontal='center'>
-              <img src={'https://i.imgur.com/9fKxIhnm.png'} alt='test' />
+              <img className='booImage' src={'https://i.imgur.com/pqHTzASm.png'} alt='glasses-boo' />
             </Column>
           </Row>
         </Column>
