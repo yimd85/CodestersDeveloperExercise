@@ -96,6 +96,11 @@ img.imageClass {
 }
 
 /* media queries */
+@media(max-width: 1200px) {
+  .booImage{
+    display: none;
+  }
+}
 @media(max-width: 950px) {
   .headerText{
     font-size: 40px;
@@ -104,18 +109,22 @@ img.imageClass {
     font-size: 50px;
   }
 }
+@media(max-width: 1000px) {
+  .largeDesc{
+    font-size: 30px;
+  }
+}
+@media(max-width: 700px) {
+  .largeDesc{
+    font-size: 20px;
+  }
+}
 @media(max-width: 600px) {
   .welcomeText {
     font-size: 30px;
   }
-  .largeDesc{
-    font-size: 20px;
-  }
   .headerText{
     font-size: 20px;
-  }
-  .booImage{
-    display: none;
   }
   .booleanImage{
     display: none;
